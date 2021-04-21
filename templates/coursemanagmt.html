@@ -1,0 +1,82 @@
+<!--<!doctype html>-->
+<!--<html>-->
+<!--<head>-->
+<!--<meta charset="utf-8">-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+<head>
+<style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 40%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+</head>
+
+{% extends 'adminindex.html' %}
+{% block body %}
+<body>
+	<form action="/coursemngmt1" method="post">
+	<table width="200" id="customers" align="center">
+  <tbody>
+    <tr>
+      <th scope="row">Department</th>
+      <td><label for="select"></label>
+
+        <select name="select" id="select">
+          {% for i in val1  %}
+          <option value="{{i[0]}}">{{i[1]}}</option>
+          {% endfor %}
+			</select></td>
+      <td><input type="submit" name="button" id="button" value="Search"></td>
+      </tr>
+        
+  </tbody>
+    </table>
+		</form>
+		<form action="/courseadd" , method="post">
+      <table width="200" id="customers" align="center">
+  <tbody>
+    <tr>
+      <th scope="row">Courseid</th>
+      <th>course</th>
+      <td>seats</td>
+      <td></td>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <th scope="row">{{i[0]}}&nbsp;</th>
+      <td>&nbsp;{{i[1]}}</td>
+      <td>{{i[2]}}</td>
+      <td><a href="coursedel?id={{i[0]}}">delete</a></td>
+    </tr>
+    {% endfor %}
+   <!--</form>-->
+    <tr>
+      <th colspan="3" scope="row"><input type="submit" name="button" id="button2" value="Add"></th>
+      </tr>
+  </tbody>
+</table>
+
+</form>
+</body>
+{% endblock %}
+<!--</html>-->

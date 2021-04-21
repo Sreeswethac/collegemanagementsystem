@@ -1,0 +1,70 @@
+<!--<!doctype html>-->
+<!--<html>-->
+<!--<head>-->
+<!--<meta charset="utf-8">-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+{% extends 'index.html' %}
+{% block body %}
+
+
+<head>
+<style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 40%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+</head>
+
+
+
+
+
+
+<body>
+	
+	<form action="/login" method="post">
+	<table width="202" id="customers" >
+  <tbody>
+    <tr>
+      <th colspan="2" scope="row" ><div align="center">Login</div></th>
+      </tr>
+    <tr>
+      <th  scope="row">Username</th>
+      <td><input type="text" name="textfield"/>
+    </tr>
+    <tr>
+      <th scope="row">password</th>
+      <td> <input type="password" name="textfield2"/>
+    </tr>
+    <tr>
+      <th>
+        <input type="submit" name="button" id="button" value="Login"/>
+		</th>
+		<td><a href="#">Change password</a></td>
+      </tr>
+  </tbody>
+</table>
+</form>
+    {% endblock %}
+<!--</body>-->
+<!--</html>-->

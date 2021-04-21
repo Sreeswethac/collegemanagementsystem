@@ -1,0 +1,75 @@
+<!--<!doctype html>-->
+<!--<html>-->
+<!--<head>-->
+<!--<meta charset="utf-8">-->
+<!--<title>Untitled Document</title>-->
+<!--<style type="text/css">-->
+<!--#customers {  font-family: Arial, Helvetica, sans-serif;-->
+  <!--border-collapse: collapse;-->
+  <!--width: 40%;-->
+<!--}-->
+<!--</style>-->
+<!--</head>-->
+{% extends 'index.html' %}
+{% block body %}
+
+
+<head>
+<style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 40%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+</head>
+
+<body>
+<form action="" method="post">
+  <table width="200" border="1" id="customers" align="center">
+    <tbody>
+      <tr>
+        
+        <th scope="row"><div align="center">ABOUT US</div></th>
+      </tr>
+      <tr>
+        
+        <th scope="row">land number</th>
+      </tr>
+      <tr>
+        
+        <th scope="row">mobile</th>
+      </tr>
+    </tbody>
+  </table>
+</form>
+</body>
+</html>
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+</head>
+
+<body>
+</body>
+{% endblock %}
+<!--</html>-->

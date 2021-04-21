@@ -1,0 +1,157 @@
+<!--<!doctype html>-->
+<!--<html>-->
+<!--<head>-->
+<!--<meta charset="utf-8">-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+
+<head>
+<style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 40%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+</head>
+
+
+{% extends 'adminindex.html' %}
+{% block body %}
+<body>
+	<form action="/staffmanagmnt" method="post" enctype="multipart/form-data">
+	<table width="200"  id="customers" align="center">
+  <tbody>
+    <tr>
+      <th scope="row">Type</th>
+      <td><label for="select"></label>
+        <select name="select" id="select">
+			<option>Select Option</option>
+			<option>Hod</option>
+			<option>Staff</option>
+        </select></td>
+    </tr>
+    <tr>
+      <th scope="row">Name</th>
+      <td><input type ="text" name="textfield" required pattern="[A-Z a-z.]{3,25}"></td>
+    </tr>
+    <tr>
+      <th scope="row">Place</th>
+      <td><input type ="text" name="textfield1"></td>
+    </tr>
+    <tr>
+      <th scope="row">Phone</th>
+      <td><input type ="text" name="textfield2" required pattern="[6789][0-9]{9}"></td>
+    </tr>
+    <tr>
+      <th scope="row">Pin</th>
+      <td><input type ="text" name="textfield3"></td>
+    </tr>
+    <tr>
+      <th scope="row">Gender</th>
+      <td><input type="radio" name="radio" id="radio" value="m" />Male
+		  <input type="radio" name="radio" id="radio" value="f"/>
+        <label for="radio">
+		  Female
+		  </label></td>
+    </tr>
+    <tr>
+      <th scope="row">DOB</th>
+      <td><label for="date">Date:</label>
+        <input type="date" name="date" id="date"></td>
+    </tr>
+
+
+    <tr>
+      <th scope="row">District</th>
+      <td><label for="select1"></label>
+        <select name="select1" id="select1">
+			<option>Select Option</option>
+			<option>Kasargod</option>
+			<option>Kannur</option>
+			<option>Kozhikode</option>
+		  </select></td>
+    <tr>
+      <th scope="row">State</th>
+      <td><label for="select2"></label>
+        <select name="select2" id="select2">
+		<option>Select Option</option>
+			<option>Kerala</option>
+			<option>Karnataka</option>
+				
+        </select>
+		</td>
+    </tr>
+    <tr>
+      <th scope="row">Department</th>
+      <td><label for="select3"></label>
+        <select name="select3" id="select3">
+            {% for i in val %}
+		<option value="{{i[0]}}" >{{i[1]}}</option>
+			 {% endfor %}
+        </select>
+		</td>
+    </tr>
+    <tr>
+      <th scope="row">joining date</th>
+      <td><label for="dat"></label>
+        <input type="date" name="datee" id="dat"></td>
+    </tr>
+	   <tr>
+      <th scope="row">experience</th>
+      <td><label for="textfield4"></label>
+        <input type="text" name="textfield4" id="textfield4"></td>
+    </tr>
+	  
+     <!--<tr>-->
+      <!--<th scope="row">experience</th>-->
+      <!--<td><label for="date">Date:</label>-->
+        <!--<input type="date" name="date" id="date"></td>-->
+    <!--</tr>-->
+    <tr>
+      <th scope="row">Qualification</th>
+      <td>
+        <label for="fileField"></label>
+        <input type="file" name="fileField" id="fileField"></td>
+    </tr>
+	<tr>
+	
+	<th scope="row">Username</th>
+		<td><input type="text" name="uname"></td>
+		
+	 </tr>
+	<tr>
+	
+	<th scope="row">password</th>
+		<td><input type="textfield5" name="textfield5"></td>
+		
+	 </tr>
+	<tr>
+	
+	<th colspan="2" scope="row"> 
+	  <input type="submit" name="button" id="button" value="Register"></th>
+	  </tr>
+	
+  </tbody>
+</table>
+</form>
+</body>
+{% endblock %}
+<!--</html>-->
